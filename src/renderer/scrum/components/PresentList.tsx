@@ -3,6 +3,7 @@ import { useContext } from '../hooks/useContext';
 import Avatar from '@mui/material/Avatar';
 import King from '../public/king.png';
 import { TeamMember } from '../types/scrumProps';
+import { getShuffledTeamMembers } from '../utils/getShuffledTeamMembers';
 
 export const PresentList = () => {
   const [data] = useContext();
@@ -13,20 +14,7 @@ export const PresentList = () => {
       teamMember.isInStandup && teamMember.name !== firstPresenter
   );
 
-  const randomShuffle = (array: TeamMember[]) => {
-    var currentIndex = array.length,
-      temporaryValue,
-      randomIndex;
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-    return array;
-  };
-  const randomPresenters = randomShuffle(restPresenters);
+  const randomPresenters = getShuffledTeamMembers(restPresenters);
 
   console.log(randomPresenters);
   return (
