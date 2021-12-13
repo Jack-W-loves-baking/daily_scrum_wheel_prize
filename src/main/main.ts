@@ -11,7 +11,7 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import path from 'path';
-import { app, BrowserWindow, shell, ipcMain } from 'electron';
+import { app, BrowserWindow, shell, ipcMain, globalShortcut } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
@@ -81,6 +81,13 @@ const createWindow = async () => {
       devTools: false,
     },
     resizable: false,
+  });
+
+  globalShortcut.register('f5', function () {
+    mainWindow?.reload();
+  });
+  globalShortcut.register('CommandOrControl+R', function () {
+    mainWindow?.reload();
   });
 
   mainWindow.loadURL(resolveHtmlPath('index.html'));
