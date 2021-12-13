@@ -10,7 +10,9 @@
 
 **2.npm run start**
 
-> source code is in daily_scrum_wheel_prize/src/renderer
+> source code is in /src/renderer
+
+> configure file is at /src/renderer/scrum/constants/InitialValues.ts
 
 ## How to pack the project:
 

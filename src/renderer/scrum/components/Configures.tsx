@@ -6,10 +6,10 @@ import {
   FormControlLabel,
   Checkbox,
 } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import { useContext } from '../hooks/useContext';
 import { TeamMember } from '../types/scrumProps';
 import { colorCode } from '../constants/InitialValues';
-import { makeStyles } from '@mui/styles';
 
 export const Configures = () => {
   // fetch data from provider.
@@ -36,7 +36,7 @@ export const Configures = () => {
   const classes = useStyles();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    //selected checkbox teamMember's name
+    // selected checkbox teamMember's name
     const selectedName: string = event.target.name;
 
     setData({
@@ -54,10 +54,10 @@ export const Configures = () => {
     <FormControl sx={{ m: 2 }} className={classes.config_container}>
       <FormLabel>Attendees</FormLabel>
       <FormGroup className={classes.attendees_list_container}>
-        {teamMembers.map((teamMember: TeamMember, index: number) => {
+        {teamMembers.map((teamMember: TeamMember) => {
           return (
             <FormControlLabel
-              key={index}
+              key={teamMember.color}
               control={
                 <Checkbox
                   key={teamMember.name}
