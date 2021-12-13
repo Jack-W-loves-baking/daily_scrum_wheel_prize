@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useContext } from '../hooks/useContext';
 import King from '../public/king.png';
 import { TeamMember } from '../types/scrumProps';
@@ -15,8 +15,10 @@ export const PresentList = () => {
     (teamMember: TeamMember) =>
       teamMember.isInStandup && teamMember.name !== firstPresenter
   );
-  console.log(restPresenters);
-  const randomPresenters = getShuffledTeamMembers(restPresenters);
+  const randomPresenters = useMemo(
+    () => getShuffledTeamMembers(restPresenters),
+    [data.firstPresenter]
+  );
 
   const useStyles = makeStyles({
     present_container: {
