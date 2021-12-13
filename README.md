@@ -20,6 +20,8 @@
 
 # How to play with this app
 
+## Reload app
+1. F5 or control/command+R
 ## Work flow: :woozy_face:
 
 1. Click spin text.
