@@ -1,17 +1,39 @@
 import React from 'react';
-import FormLabel from '@mui/material/FormLabel';
-import FormControl from '@mui/material/FormControl';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import {
+  FormLabel,
+  FormControl,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+} from '@mui/material';
 import { useContext } from '../hooks/useContext';
 import { TeamMember } from '../types/scrumProps';
 import { colorCode } from '../constants/InitialValues';
+import { makeStyles } from '@mui/styles';
 
 export const Configures = () => {
+  // fetch data from provider.
   const [data, setData] = useContext();
 
   const teamMembers = data?.teamMembers;
+
+  const useStyles = makeStyles({
+    config_container: {
+      paddingLeft: '30px !important',
+      width: '400px',
+      height: '300px',
+      backgroundColor: 'white',
+      opacity: 0.9,
+    },
+    attendees_list_container: {
+      display: 'flex',
+      flexFlow: 'column wrap',
+      gap: '0 30px',
+      overflow: 'auto',
+      color: `${colorCode.black}`,
+    },
+  });
+  const classes = useStyles();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     //selected checkbox teamMember's name
@@ -29,27 +51,9 @@ export const Configures = () => {
   };
 
   return (
-    <FormControl
-      sx={{ m: 2 }}
-      style={{
-        display: 'flex',
-        paddingLeft: '30px',
-        width: '400px',
-        height: '300px',
-        backgroundColor: 'white',
-        opacity: 0.9,
-      }}
-    >
+    <FormControl sx={{ m: 2 }} className={classes.config_container}>
       <FormLabel>Attendees</FormLabel>
-      <FormGroup
-        style={{
-          display: 'flex',
-          flexFlow: 'column wrap',
-          gap: '0 30px',
-          overflow: 'auto',
-          color: `${colorCode.black}`,
-        }}
-      >
+      <FormGroup className={classes.attendees_list_container}>
         {teamMembers.map((teamMember: TeamMember, index: number) => {
           return (
             <FormControlLabel

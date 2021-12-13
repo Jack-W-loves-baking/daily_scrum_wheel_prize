@@ -31,5 +31,5 @@ export const initialValues = {
     { name: 'Grace', isInStandup: true, color: colorCode.green },
   ],
   readyToSpin: false,
-  firstPresenter: 'jack',
+  firstPresenter: 'Jack',
 };

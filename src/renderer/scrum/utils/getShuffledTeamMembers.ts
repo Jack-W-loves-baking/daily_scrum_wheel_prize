@@ -1,15 +1,23 @@
 import { TeamMember } from '../types/scrumProps';
 
-export const getShuffledTeamMembers = (array: TeamMember[]) => {
-  var currentIndex = array.length,
-    temporaryValue,
-    randomIndex;
-  while (0 !== currentIndex) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-  return array;
+/**
+ * 1. put each team member in the array in an object, then create a sortable key.
+ * 2. compare the value of sortable key, sort by the value, order from highest to lowest.
+ * 3. unmap to get the original objects
+ *
+ * @param teamMembers all the rest team members apart from the lucky star
+ *
+ * @returns a random list of team members
+ */
+export const getShuffledTeamMembers = (teamMembers: TeamMember[]) => {
+  return teamMembers
+    .map((teamMember: TeamMember) => ({
+      teamMember,
+      randomValue: Math.random(),
+    }))
+    .sort(
+      (teamMemberA, teamMemberB) =>
+        teamMemberB.randomValue - teamMemberA.randomValue
+    )
+    .map(({ teamMember }) => teamMember);
 };
