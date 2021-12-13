@@ -16,7 +16,6 @@ export const PresentList = () => {
 
   const randomPresenters = getShuffledTeamMembers(restPresenters);
 
-  console.log(randomPresenters);
   return (
     <div
       style={{
