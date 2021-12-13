@@ -1,10 +1,6 @@
-# Build and Pack
-
----
+# Build and Pack :eyes:
 
 ## How to run the project:
-
----
 
 **1.npm i**
 
@@ -16,36 +12,26 @@
 
 ## How to pack the project:
 
----
-
 **1.npm run package --[option]**
 
 > For example, npm run package --mac
 
 # How to play with this app
 
----
-
-## Work flow:
-
----
+## Work flow: :woozy_face:
 
 1. Click spin text.
 2. Configure the attendees.
 3. Spin the wheel.
 4. Check presentation list.
 
-# To dos
-
----
+# To dos :thinking:
 
 1. Try to re-render prize wheel.
 2. Optimize the workflow
 3. Added timer for each presenter
 
 # Package used :
-
----
 
 > 1.[electron-react-boilerplate](https://github.com/Jack-W-loves-baking/daily_scrum_wheel_prize.git).
 
