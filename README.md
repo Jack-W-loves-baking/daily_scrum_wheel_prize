@@ -1,10 +1,10 @@
-How to run the project:
+# How to run the project:
 
-npm i 
+**npm i**
 
-npm run start
+**npm run start**
 
+# Package used :
 
-Package used : 
-electron-react-boilerplate. https://github.com/Jack-W-loves-baking/daily_scrum_wheel_prize.git
-prize wheel - https://github.com/shekharramola/react-wheel-of-prizes
+> [electron-react-boilerplate](https://github.com/Jack-W-loves-baking/daily_scrum_wheel_prize.git).
+> [prize wheel](https://github.com/shekharramola/react-wheel-of-prizes).
