@@ -16,6 +16,8 @@
 
 > For example, npm run package --mac
 
+[click here](https://support.apple.com/en-hk/guide/mac-help/mh40616/mac) to know how to open unverified app on mac :triumph:
+
 # How to play with this app
 
 ## Work flow: :woozy_face:
