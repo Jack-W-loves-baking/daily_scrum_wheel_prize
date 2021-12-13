@@ -1,6 +1,7 @@
 import React from 'react';
 // @ts-ignore
 import WheelComponent from 'react-wheel-of-prizes';
+import { Labels } from '../constants/Labels';
 import { useContext } from '../hooks/useContext';
 import { TeamMember } from '../types/scrumProps';
 
@@ -32,7 +33,7 @@ export const NameListWheel = () => {
       onFinished={(firstPresenter: string) => onFinished(firstPresenter)}
       primaryColor="rgb(26, 39, 76)"
       contrastColor="white"
-      buttonText="Go"
+      buttonText={Labels.spinText}
       size={150}
       upDuration={100}
       downDuration={200}
